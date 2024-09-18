@@ -3,7 +3,7 @@ build:
   cuda: "12.1"
   python_version: "3.11"
   python_packages:
-    - "torch==2.2"
+    - "torch==2.4.1"
     - "torchvision"
     - "git+https://github.com/huggingface/diffusers"
     - "transformers==4.43.3"
@@ -20,6 +20,7 @@ build:
     - "opencv-python==4.10.0.84"
     - "controlnet-aux==0.0.3"
     - "huggingface-hub==0.24.5"
+    - "xformers==0.0.28"
 
 
 
