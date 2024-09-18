@@ -11,10 +11,9 @@ import subprocess
 import numpy as np
 from typing import List
 from PIL import Image
-from diffusers import FluxPipeline, FluxControlNetPipeline, FluxControlNetModel
+from diffusers import FluxPipeline, FluxControlNetInpaintPipeline, FluxControlNetModel
 from controlnet_aux import CannyDetector
 from huggingface_hub import hf_hub_download
-from diffusers.models import FluxControlNetInpaintPipeline
 from weights import WeightsDownloadCache
 
 MODEL_CACHE = "FLUX.1-dev"
@@ -135,9 +134,9 @@ class Predictor(BasePredictor):
         ),
         guidance_scale: float = Input(
             description="Guidance scale",
-            default=2.5,
+            default=3.5,
             ge=0,
-            le=5
+            le=30
         ),
         enable_hyper_flux_8_step: bool = Input(
             description="Whether to use Hyper-FLUX.1-dev-8steps or not. If False, make sure to increase your number of inference steps",
