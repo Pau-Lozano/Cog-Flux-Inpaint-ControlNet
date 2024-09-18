@@ -3,3 +3,4 @@ __pycache__
 checkpoints
 safety-cache
 .idea
+.DS_Store
